@@ -1,0 +1,32 @@
+Steps to enable vMotion notification feature
+
+
+1. Set host-level notification timeout
+---------------------------------------------------------
+
+Copy setHostTimeout.py to the host.
+python setHostTimeout.py <timeout-value>
+
+
+3. Deploy VM with app notification config options set
+-----------------------------------------------------
+
+Use HWv20 VM. The feature is tied to HWv20.
+vmx.vmOpNotificationToApp.enabled = "TRUE"
+
+
+4. Invoke app-notification guestRPCs from the guest
+---------------------------------------------------
+
+Run the script 'python get-notified.py'
+The script exercises app-notification guestRPCs to register for notifications, continuously poll for vMotion events, acknowledge vMotion start events etc. 
+
+
+
+
+
+
+
+
+
+
